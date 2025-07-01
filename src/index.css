@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.dark {
+    background-color: #1c1c1c;
+    transition: all 0.8s;
+}
+
+.light {
+    background: #f5f5dc;
+    transition: all 0.8s;
+}
