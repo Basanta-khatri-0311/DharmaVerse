@@ -4,17 +4,19 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Wisdom from "./pages/Wisdom";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/home" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/wisdom" element={<Wisdom />} />
       </Routes>
+      <Footer/>
     </>
   );
 };
