@@ -63,7 +63,7 @@ _Here is the demo to the app deployed on Netlify:_
 
    ```bash
    git clone https://github.com/yourusername/dharmaverse.git
-   cd dharmaverse ``` 
+   cd dharmaverse  
 2. **Install dependencies:**
 
    ```bash
