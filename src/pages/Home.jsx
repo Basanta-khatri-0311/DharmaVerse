@@ -2,6 +2,7 @@ import React, { useReducer, useState, useEffect } from "react";
 import VerseCard from "../components/VerseCard";
 import { verseReducer, initialState } from "../reducer/VerseReducer";
 import verses from "../Data/Verses";
+import TodaysThought from "../components/TodaysThought";
 
 const LOCAL_STORAGE_KEY = "dharmaverse_verses";
 
@@ -17,10 +18,7 @@ const Home = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initialVerse));
   }, [initialVerse]);
 
-  
   const [state, dispatch] = useReducer(verseReducer, initialState);
-
-  
 
   const filteredVerses = initialVerse.filter((verse) => {
     const matchedSearch =
@@ -42,16 +40,7 @@ const Home = () => {
   return (
     <div className="px-8 md:px-16 py-10 max-w-full mx-auto text-yellow-700">
       {/* Thought of the Day */}
-      <section className="mb-10">
-        <h2 className="text-xl md:text-4xl font-bold font-serif mb-4 ">
-          🪔 Today's Thought
-        </h2>
-        <div className="bg-yellow-200 dark:bg-yellow-700 p-6 rounded-lg shadow-md transition-all">
-          <p className="text-lg italic leading-relaxed text-yellow-900 dark:text-yellow-100">
-            "The mind is everything. What you think, you become." – Buddha
-          </p>
-        </div>
-      </section>
+      <TodaysThought />
 
       {/* Search and Filter Header */}
       <section className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
