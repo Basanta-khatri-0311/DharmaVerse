@@ -5,7 +5,7 @@ import { ThemeContext } from "../context/ThemeContext";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
-  const navElements = ["Home", "Gallery", "Wisdom"];
+  const navElements = ["Home", "Wisdom"];
 
   return (
     <nav className="flex justify-between items-center p-5 bg-yellow-100 text-yellow-900 dark:text-yellow-700 shadow-md relative">
