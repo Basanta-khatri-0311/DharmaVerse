@@ -15,6 +15,9 @@ const TodaysThought = () => {
       {thought ? (
         <div className="bg-yellow-200 dark:bg-yellow-700 p-6 rounded-lg shadow-md transition-all">
           <p className="text-lg italic leading-relaxed text-yellow-900 dark:text-yellow-100 mb-2">
+            {thought.sanskrit}
+          </p>
+          <p className="text-lg italic leading-relaxed text-yellow-900 dark:text-yellow-100 mb-2">
             {thought.english}
           </p>
           <p className="text-sm text-yellow-800 dark:text-yellow-300">
