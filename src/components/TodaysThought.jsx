@@ -1,9 +1,10 @@
 import React from "react";
-import verses from "../Data/Verses"; // Make sure this exports an array of objects
+import verses from "../Data/Verses"; 
 
 const TodaysThought = () => {
-  const randomId = Math.floor(Math.random() * 20) + 1;
-  const thought = verses.find((verse) => verse.id === randomId);
+    
+  const hourIndex = new Date().getHours() % verses.length;
+  const thought = verses[hourIndex];
 
   return (
     <section className="mb-10">
