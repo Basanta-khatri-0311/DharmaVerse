@@ -15,7 +15,7 @@ const verses = [
     english: "You have a right to perform your duties, but not to the fruits of your actions.",
     tag: "Self Discipline",
     category: "Self Discipline",
-    isFavorite: true,
+    isFavorite: false,
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ const verses = [
     english: "Even those who are born in sinful wombs can attain supreme goal by surrendering to me.",
     tag: "Bhakti",
     category: "Bhakti",
-    isFavorite: true,
+    isFavorite: false,
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const verses = [
     english: "Abandon all varieties of dharma and just surrender unto me.",
     tag: "Moksha",
     category: "Moksha",
-    isFavorite: true,
+    isFavorite: false,
   },
   {
     id: 10,
@@ -132,7 +132,7 @@ const verses = [
     english: "Unperturbed in sorrow, free from longing in joy — such a person is wise.",
     tag: "Self Discipline",
     category: "Self Discipline",
-    isFavorite: true,
+    isFavorite: false,
   },
   {
     id: 16,
@@ -150,7 +150,7 @@ const verses = [
     english: "I shall liberate you from all sins; do not grieve.",
     tag: "Moksha",
     category: "Moksha",
-    isFavorite: true,
+    isFavorite: false,
   },
   {
     id: 18,
