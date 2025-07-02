@@ -1,7 +1,6 @@
 import React from "react";
-import verses from "../Data/Verses";
 
-const VerseCard = () => {
+const VerseCard = ({verses, toggleFavorite}) => {
   return (
     <section className="grid gap-6">
       {verses.length === 0 ? (
@@ -19,7 +18,7 @@ const VerseCard = () => {
               <span className="text-xl font-semibold font-serif text-yellow-900 dark:text-yellow-100">
                 📜 {verse.title}
               </span>
-              <button className="text-xl text-yellow-900 dark:text-yellow-100 hover:text-red-500 transition-colors">
+              <button onClick={() => toggleFavorite(verse.id)} className="text-xl text-yellow-900 dark:text-yellow-100 hover:text-red-500 transition-colors">
                 {verse.isFavorite ? <i className="ri-heart-3-fill"></i> : <i className="ri-heart-3-line"></i> }
                 
               </button>
