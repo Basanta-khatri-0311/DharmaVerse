@@ -90,7 +90,7 @@ const VerseCard = ({ verses, toggleFavorite }) => {
             </div>
 
             {/* Verse Meta */}
-            <div className="flex justify-between items-center text-sm text-yellow-700 dark:text-yellow-400">
+            <div className="flex justify-between items-center text-sm md:text-xl text-yellow-700 dark:text-yellow-400">
               <span>🧘 {verse.tag}</span>
               <span className="italic">Chapter {verse.chapter}</span>
             </div>
