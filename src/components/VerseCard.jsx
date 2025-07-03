@@ -1,6 +1,28 @@
 import React from "react";
 
 const VerseCard = ({ verses, toggleFavorite }) => {
+  const speakText = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    const voices = speechSynthesis.getVoices();
+
+    const nepaliFemale = voices.find(
+      (v) => v.lang === "ne-NP" && v.name.toLowerCase().includes("female")
+    );
+
+    const nepaliFallback = voices.find((v) => v.lang === "ne-NP");
+
+    const selectedVoice = nepaliFemale || nepaliFallback;
+
+    if (!selectedVoice) return;
+
+    utterance.voice = selectedVoice;
+    utterance.lang = selectedVoice.lang;
+    utterance.rate = 0.9;
+    utterance.pitch = 1.1;
+
+    speechSynthesis.speak(utterance);
+  };
+
   return (
     <section className="grid gap-6">
       {verses.length === 0 ? (
@@ -21,6 +43,8 @@ const VerseCard = ({ verses, toggleFavorite }) => {
               <button
                 onClick={() => toggleFavorite(verse.id)}
                 className="text-xl text-yellow-900 dark:text-yellow-100 hover:text-red-500 transition-colors"
+                aria-label="Add verse to your wisdom"
+                title="Add verse to your wisdom"
               >
                 {verse.isFavorite ? (
                   <i className="ri-heart-3-fill"></i>
@@ -38,9 +62,17 @@ const VerseCard = ({ verses, toggleFavorite }) => {
               <span className="text-base text-yellow-800 dark:text-yellow-300">
                 {verse.english}
               </span>
+              <button
+                onClick={() => speakText(verse.sanskrit)}
+                className="mt-2 self-start text-sm md:text-2xl text-yellow-700 hover:text-yellow-900 dark:text-yellow-200 dark:hover:text-white"
+                aria-label="Play Sanskrit Verse"
+                title="Play Sanskrit Verse"
+              >
+                <i className="ri-mic-fill"></i>
+              </button>
             </div>
 
-            {/* Verse Meta: Tag (left) and Chapter (right) */}
+            {/* Verse Meta */}
             <div className="flex justify-between items-center text-sm text-yellow-700 dark:text-yellow-400">
               <span>🧘 {verse.tag}</span>
               <span className="italic">Chapter {verse.chapter}</span>
