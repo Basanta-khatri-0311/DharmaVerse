@@ -1,5 +1,3 @@
-// Refined Bhagavad Gita Verses (1–20) with Chapter and Verse Numbers
-
 const verses = [
   {
     id: 1,
