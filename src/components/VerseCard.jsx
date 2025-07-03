@@ -11,13 +11,23 @@ const VerseCard = ({ verses, toggleFavorite }) => {
 
     const nepaliFallback = voices.find((v) => v.lang === "ne-NP");
 
-    const selectedVoice = nepaliFemale || nepaliFallback;
+    const hindiFemale = voices.find(
+      (v) => v.lang === "hi-IN" && v.name.toLowerCase().includes("female")
+    );
 
-    if (!selectedVoice) return;
+    const hindiFallback = voices.find((v) => v.lang === "hi-IN");
+
+    const selectedVoice =
+      nepaliFemale || hindiFemale || nepaliFallback || hindiFallback;
+
+    if (!selectedVoice) {
+      alert("Sorry can't find audio in this browser");
+      return;
+    }
 
     utterance.voice = selectedVoice;
     utterance.lang = selectedVoice.lang;
-    utterance.rate = 0.9;
+    utterance.rate = 0.85;
     utterance.pitch = 1.1;
 
     speechSynthesis.speak(utterance);
@@ -64,7 +74,7 @@ const VerseCard = ({ verses, toggleFavorite }) => {
               </span>
               <button
                 onClick={() => speakText(verse.sanskrit)}
-                className="mt-2 self-start text-sm md:text-2xl text-yellow-700 hover:text-yellow-900 dark:text-yellow-200 dark:hover:text-white"
+                className="mt-2 self-start text-xl md:text-2xl text-yellow-700 hover:text-yellow-900 dark:text-yellow-200 dark:hover:text-white"
                 aria-label="Play Sanskrit Verse"
                 title="Play Sanskrit Verse"
               >
