@@ -22,10 +22,10 @@ const Home = () => {
 
   const filteredVerses = initialVerse.filter((verse) => {
     const matchedSearch =
-      verse.english.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-      verse.sanskrit.includes(state.searchQuery) ||
-      verse.chapter.toLowerCase().includes(state.searchQuery) ||
-      verse.chapter.toLowerCase().startsWith(state.searchQuery);
+      verse.english?.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+      verse.sanskrit?.includes(state.searchQuery) ||
+      verse.chapter?.toLowerCase().includes(state.searchQuery) ||
+      verse.chapter?.toLowerCase().startsWith(state.searchQuery);
 
     const matchesCategory =
       state.category === "All" || verse.category === state.category;
